@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>个人资料</title>
+    <!---->
+    <style>
+        .d{
+            display:inline-block;
+        }
+        .a1{
+            color:cadetblue;
+            font-size:50px;
+            margin:10px 0 0 400px;
+        }
+        .a2 {
+            font-size:40px;
+            margin:10px 400px 10px;
+            font-weight: bold;/* 使用bold关键字可以将文本设置为粗体 */
+        }
+        .b1 {
+            margin:5px;
+            font-size:20px;
+            float:left;
+        }
+        .b2 {
+            margin:5px;
+            font-size:20px;
+            float:right;
+        }
+        .a3 {
+            margin:25px 60px 10px 400px;
+            font-size:15px;
+        }
+        .two-letter:after {
+            white-space: pre;/*控制元素内的空白符和换行行为。'pre'值表示保留所有空白符和换行*/
+            content: "    ";
+        }
+        .one-letter:after {
+            white-space: pre;
+            content: " ";
+        }
+        .j {
+            text-align:center;    /*文本水平居中*/
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css样式.css') }}"/>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='plugins/bootstrap-5.3.0-alpha1-dist/css/bootstrap.css') }}"/>
+</head>
+<!---->
+<body style="margin:0">
+    <div class="a1">
+        <i>欢迎来到李俊飞的个人资料网页</i>   <!--i标签是斜体,u标签是下划线,b标签是加粗-->
+    </div>
+    <div class="a2"><span style="background-color:green">#今日学习</span>
+        <span style="background-color:aqua">#Python编程</span>
+        <span style="background-color:yellow">#HTML</span>
+    </div>
+    <table border="5">
+        <thead>
+            <tr>
+                <td style="font-size: 36px;">姓名</td>
+                <td style="font-size: 36px;">学校</td>
+                <td style="font-size: 36px;">专业</td>
+                <td style="font-size: 36px;">学院</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="one-letter" style="font-size: 36px;">李俊飞</td>
+                <td class="two-letter" style="font-size: 36px;">湖经</td>
+                <td class="two-letter" style="font-size: 36px;">统计</td>
+                <td class="two-letter" style="font-size: 36px;">统数</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <a href="https://space.bilibili.com/1392557119?spm_id_from=333.1007.0.0">点击跳转</a>
+        <a href="/wangluoxaioshuo">网络小说</a>
+        <a href="/xiaomishangcheng">小米商城</a>
+    </div>
+    <div>
+        <div class="b1">
+            <div>主科</div>
+            <ol>
+            <li>语文</li>
+            <li>数学</li>
+            <li>英语</li>
+        </ol>
+        </div>
+        <div class="b2">
+            <div>副科</div>
+            <ul>
+            <li>生物</li>
+            <li>地理</li>
+            <li>历史</li>
+        </ul>
+        </div>
+    <!--<div style="clear:both"></div>  浮动会使标签脱离文档流，无法撑起父标签，用这个可以把浮动的元素拽回来-->
+    </div>
+    <div class="a3">
+        文本框:<input type="text" style="margin-right:50px;"/>
+        密码框:<input type="password" style="margin-right:50px;"/>
+    </div>
+    <div class="a3">
+        文件选择框:<input type="file"/>
+        <input class="btn btn-primary" type="submit" value="提交"/>
+    </div>
+    <div style="margin:20px 40px 40px 400px">
+        <span>单选框:<input type="radio" name="i"/>少 <input type="radio" name="i"/>中 <input type="radio" name="i"/>多</span>
+        <span style="margin-left:30px;">复选框:<input type="checkbox"/>书 <input type="checkbox"/>笔 <input type="checkbox"/>纸</span>
+    </div>
+    <div class="d">
+        <select>    <!--<select multiple>就是可以多选，但比较丑-->
+            <option>北京</option>
+            <option>京北</option>
+            <option>老北京</option>
+        </select>
+    </div>
+
+    <textarea rows="1" id="txt" onclick="fun()">这里是备注</textarea><br/><!--多行文本-->
+    <img src="/static/52103833478386298381633782933353.jpg" style="width:20%"/>
+    <a href="https://space.bilibili.com/1392557119?spm_id_from=333.1007.0.0" target="_blank">   <!--target="_blank"属性表示在新窗口中打开链接-->
+        <img style="width:730px;" src="https://pic3.zhimg.com/70/v2-e66ad71b93674a5f42478cf46df0f47a.webp"/>
+    </a>
+    <img src="/static/52103833478386298381633782933353.jpg" style="width:20%"/>
+    <div>
+        <h3 class="j">第一个笑话</h3>
+        <div>
+            <span style="color:red">时间：</span>2023年9月29日17:15:44
+        </div>
+        <div>
+            老师在课堂上问小明：“小明，如果我给你两只猫，然后再给你两只猫，你一共有多少只猫？” 小明回答：“五只。” 老师惊讶地问：“怎么会是五只？” 小明说：“因为我家已经有一只猫了。”
+        </div>
+        <h3>第二个笑话</h3>
+        <div>
+            <span style="color:red">时间：</span>2023年9月29日17:15:44
+        </div>
+        <div>
+            有一天，一个男孩问他的父亲：“爸爸，什么是政治？” 父亲回答：“儿子，政治就是你妈是家里的老大，咱们都是小弟。“
+        </div>
+    </div>
+    <script src="static/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript">
+        function fun(){
+            if($('#txt').text()=='这里是备注'){$('#txt').text('')}
+        }
+    </script>
+</body>
+</html>
